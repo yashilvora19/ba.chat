@@ -3,6 +3,27 @@ import reflex as rx
 from chatapp import style
 from chatapp.state import State
 
+def navbar() -> rx.Component:
+    return rx.hstack(
+        rx.hstack(
+            rx.image(src="/logo.png", width="2em"),
+            rx.heading("Welcome to BA.Chat!", font_family="Roboto, Helvetica, sans-serif", font_size="1.5em"),
+        ),
+        rx.spacer(),
+        rx.menu.root(
+            rx.menu.trigger(
+                rx.button("Use our Chatbot", font_family="Roboto, Helvetica, sans-serif", font_size="1em"),
+            ),
+        ),
+        position="sticky",
+        top="0px",
+        background_color="#04507d",
+        color="white",
+        padding="1em",
+        height="4em",
+        width="100vw",
+        z_index="5",
+    )
 
 def qa(question: str, answer: str) -> rx.Component:
     return rx.box(
@@ -40,6 +61,7 @@ def action_bar() -> rx.Component:
 def index() -> rx.Component:
     return rx.center(
         rx.vstack(
+            navbar(),
             rx.heading("Welcome to BA.Chat!", size="9"),
             # rx.input(
             #     placeholder="Your Diagnosis",
@@ -57,8 +79,8 @@ def index() -> rx.Component:
             ),
             # insurance_company(),
             rx.select(
-                ["UC Ship", "Kiser", "Cigna"],
-                color="pink",
+                ["UC Ship", "Kaiser Permanente", "Cigna"],
+                color="#c4730c",
                 variant="soft",
                 radius="full",
                 width="50%",

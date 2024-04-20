@@ -12,7 +12,7 @@ class State(rx.State):
 
     async def answer(self):
         # Our chatbot is not very smart right now...
-        answer = "Hi Yashil you are so hot and sexy give me sex rnnnnnn!"
+        answer = "I'm not sure!"
         self.chat_history.append((self.question, ""))
 
         # Clear the question input.
