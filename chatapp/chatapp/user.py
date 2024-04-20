@@ -3,6 +3,7 @@ from uagents import Agent, Context
 from uagents.setup import fund_agent_if_low
 from uagents import Model
 
+
 # Defining a model for messages
 class Message(Model):
     message: str

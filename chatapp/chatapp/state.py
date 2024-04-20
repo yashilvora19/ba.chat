@@ -1,7 +1,8 @@
 import reflex as rx
 import asyncio
-from gemini_agent import Gemini_agent
-from user import user  # Import User class
+# from gemini_agent import Gemini_agent
+# from user import user  # Import User class
+from dotenv import load_dotenv
 
 class State(rx.State):
     # The current question being asked.
@@ -9,9 +10,11 @@ class State(rx.State):
 
     # Keep track of the chat history as a list of (question, answer) tuples.
     chat_history: list[tuple[str, str]]
+    
     def agents(self):
-        self.gemini_agent = Gemini_agent()
-        self.user = user()  # Create instance of User
+        load_dotenv()
+        self.gemini_agent = os.getenv("Gemini_agent")
+        self.user = os.getenv("user")  # Create instance of User
 
     async def answer(self):
         # Send question to User for interaction
