@@ -1,17 +1,18 @@
 # chatapp.py
 import reflex as rx
-from chatapp import style
+from chatapp.style import style
 from chatapp.state import State
+from google.api import client_pb2
 
 
 def qa(question: str, answer: str) -> rx.Component:
     return rx.box(
         rx.box(
-            rx.text(question, style=style.question_style),
+            rx.text(question, style=style['question_style']),
             text_align="right",
         ),
         rx.box(
-            rx.text(answer, style=style.answer_style),
+            rx.text(answer, style=style['answer_style']),
             text_align="left",
         ),
         margin_y="1em",
@@ -31,11 +32,11 @@ def action_bar() -> rx.Component:
             value=State.question,
             placeholder="Your Diagnosis/Questions",
             on_change=State.set_question,
-            style=style.input_style,
+            style=style['input_style'],
             variant='soft',
             color_scheme='purple',
             size =10),
-        rx.button("Ask", on_click=State.answer, style=style.button_style),
+        rx.button("Ask", on_click=State.answer, style=style['button_style']),
     )
 def index() -> rx.Component:
     return rx.center(
@@ -57,7 +58,7 @@ def index() -> rx.Component:
             ),
             # insurance_company(),
             rx.select(
-                ["UC Ship", "Kiser", "Cigna"],
+                ["UC Ship", "Kaiser Permenante", "Cigna"],
                 color="pink",
                 variant="soft",
                 radius="full",
