@@ -7,7 +7,7 @@ def navbar() -> rx.Component:
     return rx.hstack(
         rx.hstack(
             rx.image(src="/logo.png", width="2em"),
-            rx.heading("Welcome to BA.Chat!", font_family="Roboto, Helvetica, sans-serif", font_size="1.5em"),
+            rx.heading("BA.Chat: Basically Affordable", font_family="Roboto, Helvetica, sans-serif", font_size="1.5em"),
         ),
         rx.spacer(),
         rx.menu.root(
@@ -47,7 +47,33 @@ def chat() -> rx.Component:
     )
 
 def action_bar() -> rx.Component:
-    return rx.hstack(
+    return rx.vstack(
+        rx.select(
+                ["UC Ship", "Kaiser Permanente", "Cigna"],
+                placeholder="Insurance Company",
+                value=State.location,
+                color="#c4730c",
+                variant="soft",
+                radius="full",
+                color_scheme='purple',
+                # width="50%",
+            ),
+        rx.input(
+            value=State.location,
+            placeholder="Your Location",
+            # on_change=State.set_question,
+            style=style.input_style,
+            variant='soft',
+            color_scheme='purple',
+            size =10),
+        rx.input(
+            value=State.calender_link,
+            placeholder="Calender Link",
+            # on_change=State.set_question,
+            style=style.input_style,
+            variant='soft',
+            color_scheme='purple',
+            size =10),
         rx.input(
             value=State.question,
             placeholder="Your Diagnosis/Questions",
@@ -71,20 +97,20 @@ def index() -> rx.Component:
                 width="400px", 
                 height="auto"
             ), 
-            rx.input(
-                placeholder="Your Location", size =10,
-            ),
-            rx.input(
-                placeholder="Google Calendar", size =10,
-            ),
+            # rx.input(
+            #     placeholder="Your Location", size =10,
+            # ),
+            # rx.input(
+            #     placeholder="Google Calendar", size =10,
+            # ),
             # insurance_company(),
-            rx.select(
-                ["UC Ship", "Kaiser Permanente", "Cigna"],
-                color="#c4730c",
-                variant="soft",
-                radius="full",
-                width="50%",
-            ),
+            # rx.select(
+            #     ["UC Ship", "Kaiser Permanente", "Cigna"],
+            #     color="#c4730c",
+            #     variant="soft",
+            #     radius="full",
+            #     width="50%",
+            # ),
             chat(),
             action_bar(),
             align="center",
