@@ -29,14 +29,40 @@ def action_bar() -> rx.Component:
     return rx.hstack(
         rx.input(
             value=State.question,
-            placeholder="Ask a question",
+            placeholder="Your Diagnosis/Questions",
             on_change=State.set_question,
-            style=style.input_style),
+            style=style.input_style,
+            variant='soft',
+            color_scheme='purple',
+            size =10),
         rx.button("Ask", on_click=State.answer, style=style.button_style),
     )
 def index() -> rx.Component:
     return rx.center(
         rx.vstack(
+            rx.heading("Welcome to BA.Chat!", size="9"),
+            # rx.input(
+            #     placeholder="Your Diagnosis",
+            # ),
+            rx.image(
+                src="logo-detailed.png",
+                width="400px", 
+                height="auto"
+            ), 
+            rx.input(
+                placeholder="Your Location", size =10,
+            ),
+            rx.input(
+                placeholder="Google Calendar", size =10,
+            ),
+            # insurance_company(),
+            rx.select(
+                ["UC Ship", "Kiser", "Cigna"],
+                color="pink",
+                variant="soft",
+                radius="full",
+                width="50%",
+            ),
             chat(),
             action_bar(),
             align="center",

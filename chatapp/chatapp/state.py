@@ -22,7 +22,7 @@ class State(rx.State):
 
         for i in range(len(answer)):
             # Pause to show the streaming effect.
-            await asyncio.sleep(0.1)
+            await asyncio.sleep(0.09)
             # Add one letter at a time to the output.
             self.chat_history[-1] = (
                 self.chat_history[-1][0],
