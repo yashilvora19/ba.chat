@@ -32,7 +32,7 @@ def qa(question: str, answer: str) -> rx.Component:
             text_align="right",
         ),
         rx.box(
-            rx.text(answer, style=style.answer_style),
+            rx.markdown(answer, style=style.answer_style),
             text_align="left",
         ),
         margin_y="1em",
