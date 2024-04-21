@@ -16,17 +16,38 @@ class State(rx.State):
     curr_chat_history: str
 
     async def answer(self, key):
+        college_context_mapping = {
+            "UC Los Angeles": "ucla_ship.txt",
+            "UC San Diego": "ucsd_ship.txt",
+            "UC Berkeley": "ucb_ship.txt",
+            "UC Irvine": "uci_ship.txt",
+            "UC Santa Barbara": "ucsb_ship.txt",
+            "UC Santa Cruz": "ucsc_ship.txt",
+            "UC Riverside": "ucr_ship.txt",
+            "UC Merced": "ucm_ship.txt"
+        }
+
+        filename = college_context_mapping[self.location]
+
+        with open(filename, "r") as file:
+            context = file.read().strip()
+
         gai.configure(api_key="AIzaSyAMxGxjk8L3y9KQAy5qE88QaumApA6jAiU")
         # Based on this and any other knowledge that is useful, give them the best way to use their insurance. If you are given this statement 'KEYWORD: HOSPITAL' in the prompt, then simply suggest  10 hospitals based on their location that would be good to visit for diagnosis along with estimated costs. Here
-        with open("chatapp/context.txt", 'r', encoding='utf-8') as file:
-            context = file.read().strip()
 
         model = gai.GenerativeModel('gemini-1.5-pro-latest',
                                     system_instruction="You are an assistant that helps people with their health related information. You will be given their location, initial diagnosis, and insurance plan and you will give them an estimate of what their bill should cost (by giving explanations of their tests and procedures and what each will cost with a tally at the end after insurance). Here is the input  that you will get: their diagnosis, location, and details about the insurance plan.")
         if (key == 4):
             prompt = "Here is my location {self.location}. Here is my insurance plan: " + str(context) + " Here is my question:" + str(self.question) + " Here is our conversation up till now: " + str(self.curr_chat_history)
-        else:
-            prompt = "Here is my location {self.location}. Here is my insurance plan: " + str(context) + str(self.question) + " Here is our conversation up till now: " + str(self.curr_chat_history)
+        elif (key == 0):
+            prompt = "Here is my location {self.location}. Here is my insurance plan: " + str(context) + "Here is my diagnosis: " +str(self.diagnosis) +  "TODO:Yashil" +" Here is our conversation up till now: " + str(self.curr_chat_history)
+        elif (key == 1):
+            prompt = "Here is my location {self.location}. Here is my insurance plan: " + str(context) + "Here is my diagnosis: " +str(self.diagnosis) + "TODO:Yashil" + " Here is our conversation up till now: " + str(self.curr_chat_history)
+        elif (key == 2):
+            prompt = "Here is my location {self.location}. Here is my insurance plan: " + str(context) + "Here is my diagnosis: " +str(self.diagnosis) + "TODO:Yashil" + " Here is our conversation up till now: " + str(self.curr_chat_history)
+        elif (key == 3):
+            prompt = "Here is my location {self.location}. Here is my insurance plan: " + str(context) + "Here is my diagnosis: " +str(self.diagnosis) + "TODO:Yashil" + " Here is our conversation up till now: " + str(self.curr_chat_history)
+
 
         response = model.generate_content(prompt)
         answer = response.text
