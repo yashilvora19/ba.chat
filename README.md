@@ -39,7 +39,7 @@ Time is money. We save both. ba.chat was motivated with the idea that healthcare
 
 <p align="center"><strong>ba.chat is the only platform you need to use for the entire process!</strong></p>
 
-**Contributors**
+### **Contributors**
 
 
 - Aniruddha Dasu: [LinkedIn](https://www.linkedin.com/in/aniruddha-dasu-621822203/) | [GitHub](https://github.com/anidasu)
