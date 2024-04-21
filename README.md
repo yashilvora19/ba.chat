@@ -33,7 +33,7 @@ Time is money. We save both. ba.chat was motivated with the idea that healthcare
    3. Craft a convincing email to your healthcare provider, underlining terms in your policy that the average user would gloss over. Maximize your benefits!
    4. Check for potential medical error: Medical errors are the [third leading cause of death in America](https://wilsonlaw.com/fatal-medical-errors/), and ba.chat cross-references the depths of medical resources to ensure you are not put in danger.
 3. Receive a response tailored to your specifications exactly, and chat with our friendly AI to get more information!
-4. Ask ba.chat to send an email to your healthcare provider to negotiate costs or hospitals near you to schedule appointments! Using a nifty Gmail integration, we simplify the process for you end-to-end. 
+4. Ask ba.chat to send an email to your healthcare provider to negotiate costs or hospitals near you to schedule appointments!
 
 ![BAChat](chatapp/assets/BAChat_Text.png)
 
