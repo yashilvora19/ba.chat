@@ -12,14 +12,26 @@ class State(rx.State):
     # Keep track of the chat history as a list of (question, answer) tuples.
     chat_history: list[tuple[str, str]]
 
-    async def answer(self):
-        # Our chatbot is not very smart right now...
+    async def answer(self, question:str):
+        with open("context.txt", "r") as file:
+            context = file.read().strip()
+        prompt = f"{question}\n{context}"
+
         gai.configure(api_key="AIzaSyAMxGxjk8L3y9KQAy5qE88QaumApA6jAiU")
         model = gai.GenerativeModel('gemini-1.0-pro-latest')
-        response = model.generate_content(self.question)
+        response = model.generate_content(prompt)
         answer = response.text
-        # answer = "Hi Yashil you are so hot and sexy give me sex rnnnnnn!"
+
         self.chat_history.append((self.question, answer))
+
+    # async def answer(self):
+    #     # Our chatbot is not very smart right now...
+    #     gai.configure(api_key="AIzaSyAMxGxjk8L3y9KQAy5qE88QaumApA6jAiU")
+    #     model = gai.GenerativeModel('gemini-1.0-pro-latest')
+    #     response = model.generate_content(self.question)
+    #     answer = response.text
+    #     # answer = "Hi Yashil you are so hot and sexy give me sex rnnnnnn!"
+    #     self.chat_history.append((self.question, answer))
 
         # Clear the question input.
         # self.question = ""
