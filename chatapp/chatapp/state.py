@@ -17,20 +17,15 @@ class State(rx.State):
 
     async def answer(self):
 
-        # gai.configure(api_key="AIzaSyAMxGxjk8L3y9KQAy5qE88QaumApA6jAiU")
-        # model = gai.GenerativeModel('gemini-1.0-pro-latest')
+        gai.configure(api_key="AIzaSyAMxGxjk8L3y9KQAy5qE88QaumApA6jAiU")
+        model = gai.GenerativeModel('gemini-1.0-pro-latest',
+                                    system_instruction="You are an assistant that helps people with their health related information. You will be given their location, initial diagnosis, and insurance plan and you will give them an estimate of what their bill should cost (by giving explanations of their tests and procedures and what each will cost with a tally at the end after insurance). Here is the input  that you will get: their diagnosis, location, and details about the insurance plan. Based on this and any other knowledge that is useful, give them the best way to use their insurance. If you are given this statement 'KEYWORD: HOSPITAL' in the prompt, then simply suggest  10 hospitals based on their location that would be good to visit for diagnosis along with estimated costs. If you are given the ")
 
-        # with open("chatapp/context.txt", 'r', encoding='utf-8') as file:
-        #     context = file.read().strip()
-        # prompt = f"{self.question}\n{context}"
-        # response = model.generate_content(prompt)
-        # answer = response.text
-        bureau = Bureau(endpoint="http://127.0.0.1:5000/submit", port=8000)
-
-        bureau.add(Gemini_agent)
-        bureau.add(user)
-        bureau.run()
-
+        with open("chatapp/context.txt", 'r', encoding='utf-8') as file:
+            context = file.read().strip()
+        prompt = f"{self.question}\n{context}"
+        response = model.generate_content(prompt)
+        answer = response.text
         self.chat_history.append((self.question, answer))
         # Clear the question input.
         # self.question = ""
