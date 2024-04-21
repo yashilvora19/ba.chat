@@ -96,8 +96,8 @@ def chat() -> rx.Component:
 def action_bar() -> rx.Component:
     return rx.vstack(
         rx.select(
-                ["UC Ship (More coming soon!)"],
-                placeholder="Insurance Company",
+                ["UC Los Angeles", "UC San Diego", "UC Berkeley", "UC Santa Barbara", "UC Riverside", "UC Merced", "UC Santa Cruz", "UC Irvine"],
+                placeholder="UC Insurance Provider",
                 value=State.location,
                 color="#d49d56",
                 variant="soft",
@@ -124,14 +124,16 @@ def action_bar() -> rx.Component:
             color_scheme='bronze',
             size =10),
         rx.spacer(),
-        rx.input(
+        rx.text_area(
             value=State.question,
-            placeholder="Your Diagnosis/Questions",
+            placeholder="Your Diagnosis",
             on_change=State.set_question,
             style=style.input_style,
             variant='soft',
             color_scheme='bronze',
-            size =10),
+            size ="3",
+            rows="5",
+        ),
         rx.spacer(),
         rx.button("Negotiate Price", on_click=State.answer, style=style.button_style),
         rx.button("Book Appointment", on_click=State.answer, style=style.button_style),
