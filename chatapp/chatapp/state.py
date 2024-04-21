@@ -3,7 +3,6 @@ import reflex as rx
 import asyncio
 import google.generativeai as gai
 from uagents import Bureau
-from .user import user  # Imports the user agent configuration
 from .gemini_agent import Gemini_agent  # Imports the Gemini agent configuration
 
 class State(rx.State):

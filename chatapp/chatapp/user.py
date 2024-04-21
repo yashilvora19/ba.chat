@@ -2,6 +2,7 @@
 from uagents import Agent, Context
 from uagents.setup import fund_agent_if_low
 from uagents import Model
+from chatapp.state import State
 
 # Defining a model for messages
 class Message(Model):
@@ -27,7 +28,7 @@ async def agent_address(ctx: Context):
     # Logging the user agent's address
     ctx.logger.info(user.address)
     # Prompting for user input and sending it as a message to the gemini agent
-    message = str(input('You:'))
+    message = State.question
     await ctx.send(Gemini_Address, Message(message=message))
 
 # Handler for receiving messages from gemini agent and sending new request
