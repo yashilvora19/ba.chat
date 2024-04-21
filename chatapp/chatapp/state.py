@@ -60,8 +60,6 @@ class State(rx.State):
         self.chat_history.append((self.question,answer))
         self.curr_chat_history += "I asked: " + self.question + " \nYou replied: " + answer + "n"
 
-        # Clear the question input.
-        # self.question = ""
         # Yield here to clear the frontend input before continuing.
         yield
 

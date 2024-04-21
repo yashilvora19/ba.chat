@@ -8,8 +8,6 @@ def navbar() -> rx.Component:
     return rx.hstack(
         rx.hstack(
             rx.image(src="/new_logo.png", width="7.5em"),
-            # rx.heading("BA.Chat", font_family="Exo", font_size="2em", color="white"),
-            # rx.cardrx.card("Basics. Affordable.", color="black", variant="surface", size="1")
         ),
         rx.spacer(),
         rx.spacer(),
@@ -24,17 +22,9 @@ def navbar() -> rx.Component:
             width="50%",
             align="stretch",
             justify ="between",
-
-    ),
-    rx.spacer(),
-    rx.spacer(),
-        
-
-        # rx.spacer(),
-        # rx.button("Our Vision", font_family="DM Sans", font_size="1em", color_scheme="bronze", align="center"),
-        # rx.button("Our Team", font_family="DM Sans", font_size="1em", color_scheme="bronze", align="center"),
-        # rx.button("Documentation", font_family="DM Sans", font_size="1em", color_scheme="bronze", align="center"),
-        # ),
+        ),
+        rx.spacer(),
+        rx.spacer(),
         position="center",
         top="0px",
         background_color="#000000",
@@ -48,8 +38,6 @@ def navbar() -> rx.Component:
 def sectioning() -> rx.Component:
     return rx.flex(
         rx.section(
-            # rx.heading("Section 1"),
-            # rx.text("This is the first content section"),
             action_bar(),
             padding_left="12px",
             padding_right="12px",
@@ -173,7 +161,6 @@ def action_bar() -> rx.Component:
         rx.spacer(),
         rx.spacer(),
         rx.spacer(),
-        # rx.button("Ask", on_click=State.answer, style=style.button_style),
         spacing="2",
         height="80vh",
         
