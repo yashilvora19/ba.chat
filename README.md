@@ -21,7 +21,7 @@
 
 Time is money. We save both. BA.Chat was motivated with the idea that healthcare, a _basic_ human right, should be made _affordable_. Insurance stress? Chat with our personalized assistant and find the best path to maximize your insurance benefits and get better!
 
-![BAChat Empty](chatapp\assets\BAChat%20empty.png)
+![BAChat Empty](chatapp/assets/BAChat_empty.png)
 
 ### Our super-easy-to-use pipeline:
 1. Upload your insurance provider, location, email address, and most recent diagnosis into their designated areas.
@@ -33,6 +33,6 @@ Time is money. We save both. BA.Chat was motivated with the idea that healthcare
 3. Receive a response tailored to your specifications exactly, and chat with our friendly AI to get more information!
 4. Ask BA.Chat to send an email to your healthcare provider to negotiate costs or hospitals near you to schedule appointments! Using a nifty Gmail integration, we simplify the process for you end-to-end. 
 
-![BAChat](chatapp\assets\BAChat%20Text.png)
+![BAChat](chatapp/assets/BAChat_Text.png)
 
 <p align="center"><strong>BA.Chat is the only platform you need to use for the entire process!</strong></p>
