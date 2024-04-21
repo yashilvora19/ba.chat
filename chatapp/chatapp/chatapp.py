@@ -16,10 +16,10 @@ def navbar() -> rx.Component:
         rx.spacer(),
         
         rx.flex(
-            rx.card("Resources", color="black", variant="surface", size="1",  _hover={"color": "#ffffff", "border" : "DDDDDD"}),
-            rx.card("Documentation", color="black", variant="surface", size="1",  _hover={"color": "#ffffff", "border" : "DDDDDD"}),
-            rx.card("Mission", color="black", variant="surface", size="1",  _hover={"color": "#ffffff", "border" : "DDDDDD"}),
-            rx.card("Our Team", color="black", variant="surface", size="1",  _hover={"color": "#ffffff", "border" : "DDDDDD"}),
+            rx.link("Resources", href="https://myucship.org/",color="white", variant="surface", size="3", _hover={"color": "#ffffff"}),
+            rx.link("Documentation", href="https://github.com/yashilvora19/BA.Chat", color="white", variant="surface", size="3", _hover={"color": "#ffffff"}),
+            rx.link("Our Team", href="/team", color="white", variant="surface", size="3", _hover={"color": "#ffffff"}),
+            rx.link("Vision", href="https://github.com/yashilvora19/BA.Chat/blob/main/README.md", color="white", variant="surface", size="3", _hover={"color": "#ffffff"}),
             spacing="8",
             width="50%",
             align="stretch",
@@ -40,7 +40,7 @@ def navbar() -> rx.Component:
         background_color="#000000",
         color="#443d39",
         padding="1em",
-        height="5em",
+        height="4.5em",
         width="100vw",
         z_index="5",
     )
@@ -79,10 +79,10 @@ def sectioning() -> rx.Component:
                     style=style.input_style,
                     variant='soft',
                     color_scheme='blue',
-                    width="450px"
+                    width="550px"
                 ),
                 rx.spacer(),
-                rx.button("Send", on_click=State.answer, style=style.button_style),
+                rx.button("Send", on_click=State.answer(4), style=style.button_style),
             ),
             direction="column",
         ),
@@ -113,6 +113,14 @@ def chat() -> rx.Component:
         )
     )
 
+
+def footer() -> rx.Component:
+    return rx.box(
+        rx.text("Ba.chat: Basics, Affordable.", align="left", color="white"),
+        background_color="#0000",
+        padding="20px",
+    )
+
 def action_bar() -> rx.Component:
     return rx.vstack(
         rx.select(
@@ -129,7 +137,7 @@ def action_bar() -> rx.Component:
         rx.input(
             value=State.location_2,
             placeholder="Your Location",
-            on_change=State.set_location,
+            on_change=State.set_location_2,
             style=style.input_style,
             variant='classic',
             width="400px",
@@ -153,51 +161,34 @@ def action_bar() -> rx.Component:
             rows="4",
         ),
         rx.spacer(),
-        rx.button("Negotiate Price", on_click=State.answer, style=style.button_style),
-        rx.button("Book Appointment", on_click=State.answer, style=style.button_style),
-        rx.button("Insurance Analysis", on_click=State.answer, style=style.button_style),
-        rx.button("Second Opinion?", on_click=State.answer, style=style.button_style),
+        rx.flex(
+            rx.button("Insurance Analysis 🏥", on_click=State.answer(0), style=style.button_style),
+            rx.button("Schedule Appointment 🗓️", on_click=State.answer(1), style=style.button_style),
+            rx.button("Negotiate Price 💰", on_click=State.answer(2), style=style.button_style),
+            rx.button("Double Check for Medical Error ⚕", on_click=State.answer(3), style=style.button_style),
+            direction="column",
+            spacing="4"
+        ),
+        rx.spacer(),
+        rx.spacer(),
+        rx.spacer(),
+        rx.spacer(),
         # rx.button("Ask", on_click=State.answer, style=style.button_style),
         spacing="2",
         height="80vh",
-    )
+        
+    ),
+
+    
 def index() -> rx.Component:
     return rx.center(
         rx.vstack(
             navbar(),
             sectioning(),
-            # rx.heading("Welcome to BA.Chat!", size="9"),
-
-            # rx.input(
-            #     placeholder="Your Diagnosis",
-            # ),
-
-            # rx.image(
-            #     src="logo-detailed.png",
-            #     width="400px", 
-            #     height="auto"
-            # ), 
-
-            # rx.input(
-            #     placeholder="Your Location", size =10,
-            # ),
-            # rx.input(
-            #     placeholder="Google Calendar", size =10,
-            # ),
-            # insurance_company(),
-            # rx.select(
-            #     ["UC Ship", "Kaiser Permanente", "Cigna"],
-            #     color="#c4730c",
-            #     variant="soft",
-            #     radius="full",
-            #     width="50%",
-            # ),
-
-            # chat(),
-            # action_bar(),
-            # align="center",
+            footer(),
         )
     )
+    
 
 
 app = rx.App()
