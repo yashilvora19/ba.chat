@@ -1,4 +1,6 @@
-![logo](chatapp/assets/new_logo.png)
+<p align="center">
+  <img src="chatapp/assets/new_logo.png" width=400px height=auto/>
+</p>
 <p align="center">
   <a href="https://www.python.org/downloads/">
     <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
@@ -36,3 +38,11 @@ Time is money. We save both. ba.chat was motivated with the idea that healthcare
 ![BAChat](chatapp/assets/BAChat_Text.png)
 
 <p align="center"><strong>ba.chat is the only platform you need to use for the entire process!</strong></p>
+
+**Contributors**
+
+
+- Aniruddha Dasu: [LinkedIn](https://www.linkedin.com/in/aniruddha-dasu-621822203/) | [GitHub](https://github.com/anidasu)
+- Arnav Kamdar: [LinkedIn](https://www.linkedin.com/in/arnav-kamdar-37a64a146) | [GitHub](https://github.com/arnavkamdar)
+- Mishka Jethwani: [LinkedIn](https://www.linkedin.com/in/mishka-jethwani-791246282/) | [GitHub](https://github.com/mishkajethwani)
+- Yashil Vora: [LinkedIn](https://www.linkedin.com/in/yashil-vora) | [GitHub](https://github.com/yashilvora19)
