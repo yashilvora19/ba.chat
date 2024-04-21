@@ -8,7 +8,7 @@ class State(rx.State):
     # The current question being asked.
     question: str
     location: str
-    calender_link: str
+    calendar_link: str
     insurance_company: str
     # Keep track of the chat history as a list of (question, answer) tuples.
     chat_history: list[tuple[str, str]]
@@ -28,7 +28,7 @@ class State(rx.State):
         # Clear the question input.
         # self.question = ""
         # Yield here to clear the frontend input before continuing.
-        # yield
+        yield
 
         for i in range(len(answer)):
             # Pause to show the streaming effect.
@@ -38,10 +38,4 @@ class State(rx.State):
                 self.chat_history[-1][0],
                 answer[: i + 1],
             )
-        #     yield
-    # async def action_bar():
-    #         style = Style(font_size=20)
-    #         question = "Your question here"  # You need to define the question here or fetch it from somewhere
-    #         context = "Load context from file here"  # Load context from file
-    #         rx.button("Ask", on_click=lambda: State().answer(), style=style.button_style)
-
+            yield
