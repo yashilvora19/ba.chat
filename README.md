@@ -1,4 +1,4 @@
-<p align="center">TODO:Image</p>
+![logo]("chatapp/assets/new_logo.png")
 <p align="center">
   <a href="https://www.python.org/downloads/">
     <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
