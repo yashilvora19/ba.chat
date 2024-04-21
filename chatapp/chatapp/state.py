@@ -8,6 +8,7 @@ class State(rx.State):
     question: str
     location: str
     calendar_link: str
+    diagnosis: str
     insurance_company: str
     # Keep track of the chat history as a list of (question, answer) tuples.
     chat_history: list[tuple[str, str]]

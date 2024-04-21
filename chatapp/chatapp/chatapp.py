@@ -28,8 +28,6 @@ def navbar() -> rx.Component:
 def sectioning() -> rx.Component:
     return rx.flex(
         rx.section(
-            # rx.heading("Section 1"),
-            # rx.text("This is the first content section"),
             action_bar(),
             padding_left="12px",
             padding_right="12px",
@@ -59,7 +57,7 @@ def sectioning() -> rx.Component:
                     style=style.input_style,
                     variant='soft',
                     color_scheme='bronze',
-                    size =10
+                    size = 10
                 ),
                 rx.spacer(),
                 rx.button("Send", on_click=State.answer, style=style.button_style),
@@ -109,7 +107,7 @@ def action_bar() -> rx.Component:
         rx.input(
             value=State.location,
             placeholder="Your Location",
-            # on_change=State.set_question,
+            on_change=State.set_location,
             style=style.input_style,
             variant='soft',
             color_scheme='bronze',
@@ -118,7 +116,7 @@ def action_bar() -> rx.Component:
         rx.input(
             value=State.calendar_link,
             placeholder="Calendar Link",
-            # on_change=State.set_question,
+            on_change=State.set_calendar,
             style=style.input_style,
             variant='soft',
             color_scheme='bronze',
@@ -127,7 +125,7 @@ def action_bar() -> rx.Component:
         rx.text_area(
             value=State.question,
             placeholder="Your Diagnosis",
-            on_change=State.set_question,
+            on_change=State.set_diagnosis,
             style=style.input_style,
             variant='soft',
             color_scheme='bronze',
