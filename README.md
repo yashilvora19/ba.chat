@@ -1,17 +1,38 @@
-# BA.Chat
+<p align="center">TODO:Image</p>
+<p align="center">
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x">
+  </a>  
+  &nbsp;&nbsp;&nbsp;  
+    <a href="https://reflex.dev/">
+    <img src="https://img.shields.io/badge/Reflex-Latest-orange.svg" alt="Reflex Latest">
+  </a> 
+  &nbsp;&nbsp;&nbsp;
+  
+  <a href="https://deepmind.google/technologies/gemini/#introduction">
+    <img src="https://img.shields.io/badge/Gemini--API-v1.5-brightgreen.svg" alt="Gemini-API Latest">
+  </a>
+  &nbsp;&nbsp;&nbsp;
+</p>
 
-**Basically Affordable:** Making insurance and healthcare simpler, one chat at a time!
+<h1 align="center">BA.Chat</h1>
 
-Time is money. We save both. Come try out ba.chat and save on time and money. Insurance stress? Chat with our personalized assistant and find the best path to maximize your insurance benefits and get better!
+<p align="center"><strong>Basics, Affordable:</strong> Making insurance and healthcare simpler, one chat at a time!</p>
 
-1. Upload your diagnosis into the system
-2. Insurance policy should be in the database
-3. Based on this, we reccommend hospitals- present costs as well- AGENT 1
-4. Hospital bills are inaccurate- have the model compare hospital bills and how we can cut down on costs- also draft a mail and send it to negatiate costs- AGENT 2
-5. Designs the email- doesn't send it- we want to actually send it
+Time is money. We save both. BA.Chat was motivated with the idea that healthcare, a _basic_ human right, should be made _affordable_. Insurance stress? Chat with our personalized assistant and find the best path to maximize your insurance benefits and get better!
 
-- Input: Written diagnosis of the doctor + insurance company and plan
-- 2-3 insurance companies for now- UC SHIP, Kaiser Permanente, etc- we'll have the database for these companies
-- Pull the relevant data from plan- estimating costs- suggest how to maximize the insurance benefit (LLM agents)
--  Suggest appointment times based on location and calender- present phone numbers for this (Maps + calendar API)
--  Write an email to insurance company to lower costs- negotiating (Gemini API)
+![BAChat Empty](chatapp/assets/BAChat_empty.png)
+
+### Our super-easy-to-use pipeline:
+1. Upload your insurance provider, location, email address, and most recent diagnosis into their designated areas.
+2. Simply click on the service you seek from the options provided:
+   1. Analyze the cost of treatment and all deductibles based on your plan.
+   2. Obtain contact information for the best treatment and hospitals in your vicinity - balanced for a blend of affordability and premium care.
+   3. Craft a convincing email to your healthcare provider, underlining terms in your policy that the average user would gloss over. Maximize your benefits!
+   4. Check for potential medical error: Medical errors are the [third leading cause of death in America](https://wilsonlaw.com/fatal-medical-errors/), and BA.Chat cross-references the depths of medical resources to ensure you are not put in danger.
+3. Receive a response tailored to your specifications exactly, and chat with our friendly AI to get more information!
+4. Ask BA.Chat to send an email to your healthcare provider to negotiate costs or hospitals near you to schedule appointments! Using a nifty Gmail integration, we simplify the process for you end-to-end. 
+
+![BAChat](chatapp/assets/BAChat_Text.png)
+
+<p align="center"><strong>BA.Chat is the only platform you need to use for the entire process!</strong></p>
