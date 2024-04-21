@@ -7,7 +7,7 @@ class State(rx.State):
     # The current question being asked.
     question: str
     location: str
-    calender_link: str
+    calendar_link: str
     insurance_company: str
     # Keep track of the chat history as a list of (question, answer) tuples.
     chat_history: list[tuple[str, str]]
@@ -24,14 +24,14 @@ class State(rx.State):
         # Clear the question input.
         # self.question = ""
         # Yield here to clear the frontend input before continuing.
-        # yield
+        yield
 
-        # for i in range(len(answer)):
-        #     # Pause to show the streaming effect.
-        #     await asyncio.sleep(0.09)
-        #     # Add one letter at a time to the output.
-        #     self.chat_history[-1] = (
-        #         self.chat_history[-1][0],
-        #         answer[: i + 1],
-        #     )
-        #     yield
+        for i in range(len(answer)):
+            # Pause to show the streaming effect.
+            await asyncio.sleep(0.02)
+            # Add one letter at a time to the output.
+            self.chat_history[-1] = (
+                self.chat_history[-1][0],
+                answer[: i + 1],
+            )
+            yield
