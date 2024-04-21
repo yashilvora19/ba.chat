@@ -28,21 +28,22 @@ class State(rx.State):
         bureau = Bureau(endpoint="http://127.0.0.1:5000/submit", port=8000)
 
         bureau.add(Gemini_agent)
-        bureau.add(user)
+        # bureau.add(user)
         bureau.run()
-
-        self.chat_history.append((self.question, answer))
+        prompt = self.question
+        response = Gemini_agent.handle_message(prompt)
+        self.chat_history.append((self.question, response))
         # Clear the question input.
         # self.question = ""
         # Yield here to clear the frontend input before continuing.
         yield
 
-        for i in range(len(answer)):
+        for i in range(len(response)):
             # Pause to show the streaming effect.
             await asyncio.sleep(0.02)
             # Add one letter at a time to the output.
             self.chat_history[-1] = (
                 -self.chat_history[-1][0],
-                answer[: i + 1],
+                response[: i + 1],
             )
             yield
